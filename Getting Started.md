@@ -1,3 +1,8 @@
+# Knowledge Check
+
+## Spawn the target, gain a foothold and submit the contents of the user.txt flag.
+
+
 ## 🔐 VPN Connection
 
 >Before interacting with the target, I established a secure connection to the lab using **OpenVPN**.
@@ -149,9 +154,11 @@ or
 python3 -c 'import pty; pty.spawn("/bin/bash
 run this command for more interactive shell
 ```
+> Firts Flag
 <img width="296" height="217" alt="image" src="https://github.com/user-attachments/assets/d57f915c-53a9-405e-a0d5-19c3733db3e3" />
 
 <img width="1375" height="545" alt="image" src="https://github.com/user-attachments/assets/e95a519c-be9b-46a7-b18e-733c0fd5531c" />
+## After obtaining a foothold on the target, escalate privileges to root and submit the contents of the root.txt flag.
 
 ## Privilege Escalation
 
@@ -178,11 +185,49 @@ https://academy.hackthebox.com/module/77/section/844
  <img width="753" height="134" alt="image" src="https://github.com/user-attachments/assets/db14c768-4dfb-4a9d-99d1-c16a23a94dda" />
 
 >we can use /usr/bin/php without password
+>
 >got root shell
+>
+### 1️⃣ cd /usr/bin/
+
+>Moves you into the /usr/bin directory.
+>This directory contains system binaries like php, bash, sudo, etc.
+
+### 2️⃣ CMD='/bin/sh'
+
+>Creates a variable named CMD and stores /bin/sh in it.
+
+>👉 /bin/sh = a shell (command-line interpreter)
+
+### 3️⃣ sudo /usr/bin/php -r "system('$CMD');"
+
+>This is the most important (and dangerous) part.
+
+>Let’s split it:
+
+>sudo → runs the command as root
+
+>/usr/bin/php → executes PHP CLI
+
+>-r → runs PHP code directly from the command line
+
+>system('$CMD'); → executes the shell command stored in $CMD
+
+>📌 Since $CMD = /bin/sh, this line effectively becomes:
+
+>system('/bin/sh');
+
+
+💥 Result:
+A root shell is spawned.
 
 <img width="604" height="91" alt="image" src="https://github.com/user-attachments/assets/69a8e468-9890-412d-84cc-1543cc163337" />
 <br>
+
+>Second Flag
+
 <img width="374" height="198" alt="image" src="https://github.com/user-attachments/assets/103ca6db-d85b-4d62-8498-79c781c168c6" />
+
 
 
 

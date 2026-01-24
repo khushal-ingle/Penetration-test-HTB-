@@ -106,6 +106,53 @@ nmap -p 31337 -sV 10.129.4.81
 > Use NSE and its scripts to find the flag that one of the services contain and submit it as the answer.
 ## hint 
 > Based on the hint targeting web services, HTTP NSE scripts were used to enumerate the web server, revealing the flag inside robots.txt.
->The Nmap NSE http-enum script was used to enumerate common web paths on the HTTP service,
+>The Nmap NSE http-enum script was used to enumerate common web paths on the HTTP service
+
 <img width="592" height="154" alt="image" src="https://github.com/user-attachments/assets/90e1f1c7-1041-4615-9446-3325ae679af9" />
-<img width="538" height="238" alt="image" src="https://github.com/user-attachments/assets/a00beed8-a40a-4e66-b176-b7ecb61b4cc0" />
+
+## Answer
+> HTB{873nniuc71bu6usbs1i96as6dsv26}
+
+# Firewall and IDS/IPS Evasion - Easy Lab
+## Question
+>  Our client wants to know if we can identify which operating system their provided machine is running on. Submit the OS name as the answer.
+
+> I am trying with TTl value 
+
+```
+nmap -sn -oA host -PE --packet-trace --disable-arp-ping 10.129.5.114
+```
+> Since reply TTL is 63, it is likely:
+> Linux/Unix-based system (default TTL 64)
+> But this is only an assumption (1 hop difference).
+
+>performs a service/version detection scan on the target
+
+```
+nmap -sV -Pn 10.129.5.114
+```
+<img width="720" height="117" alt="image" src="https://github.com/user-attachments/assets/701f4eee-8743-4022-8cfb-be4ff8efc677" />
+
+## Answer
+> Ubuntu
+
+# Firewall and IDS/IPS Evasion - Medium Lab
+## Question
+> fter the configurations are transferred to the system, our client wants to know if it is possible to find out our target's DNS server version. Submit the DNS server version of the target as the answer.
+
+> Run this to detect a DNS server and attempt to identify its version/identity using NSID.
+```
+nmap -sU -p 53 --script=dns-nsid 10.129.5.119
+```
+<img width="525" height="190" alt="image" src="https://github.com/user-attachments/assets/f6fb377d-fe3b-4eae-af7c-a3d2f765e403" />
+
+>A UDP scan was performed on port 53 using the Nmap NSE script dns-nsid to enumerate the DNS service and retrieve the Name Server Identifier (NSID). This may expose information about the DNS server software and configuration.
+
+## Answer 
+> HTB{GoTtgUnyze9Psw4vGjcuMpHRp}
+
+# Firewall and IDS/IPS Evasion - Hard Lab
+## Question
+> Now our client wants to know if it is possible to find out the version of the running services. Identify the version of service our client was talking about and submit the flag as the answer.
+
+```

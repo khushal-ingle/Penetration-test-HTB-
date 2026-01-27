@@ -8,7 +8,9 @@ This methodology divides enumeration into **6 logical layers**, like boundaries 
 
 # Why This Methodology is Needed
 
-Penetration testing is a **dynamic process**, meaning:
+Penetration testing is a **dynamic process**,
+
+meaning:
 
 - Every target behaves differently
 - Attack paths change based on discoveries
@@ -16,10 +18,10 @@ Penetration testing is a **dynamic process**, meaning:
 
 So instead of random scanning, this layered approach provides:
 
- Structure  
- Coverage  
- Efficiency  
- Adaptability
+ - Structure  
+ - Coverage  
+ - Efficiency  
+ - Adaptability
 
 ---
 
@@ -32,7 +34,8 @@ Enumeration is divided into 3 broad levels:
 | **Infrastructure-based Enumeration** | External footprint (domains, IPs, gateways) |
 | **Host-based Enumeration**           | Services running on hosts                   |
 | **OS-based Enumeration**             | Internal OS and privilege-level information |
-
+---
+>Note: The items listed in each enumeration layer are only the main things to look for, not everything. Also, the first two layers (Internet Presence and Gateway) mostly apply to external testing and do not fully apply to internal networks like Active Directory. The enumeration of internal infrastructure is explained separately in other modules.
 ---
 ## Layer 1: Internet Presence
 
@@ -102,7 +105,9 @@ This reflects the organization’s internal security posture.
 # Key Concept: Layers as Walls
 
 Each layer is like a **wall** in front of the attacker.
-We don’t blindly break through; we search for:
+We don’t blindly break through
+
+### we search for:
 
 - Entrances
 - Weak points
@@ -116,12 +121,12 @@ Not every vulnerability leads deeper, but one correct gap often does.
 
 | Layer | Name                | Main Goal                      |
 | ----- | ------------------- | ------------------------------ |
-| 1     | Internet Presence   | Find all public assets         |
-| 2     | Gateway             | Identify perimeter defenses    |
-| 3     | Accessible Services | Discover exposed services      |
-| 4     | Processes           | Understand internal execution  |
-| 5     | Privileges          | Identify permission weaknesses |
-| 6     | OS Setup            | Gather deep OS-level info      |
+| 1     | Internet Presence   | Find everything about the company that is visible on the internet    |
+| 2     | Gateway             | Understand how the company protects its network from outside access  |
+| 3     | Accessible Services | Find which services are running and can be accessed     |
+| 4     | Processes           | Analyze service-related internal processes, tasks, and data flow  |
+| 5     | Privileges          | Identification of the internal permissions and privileges to the accessible services |
+| 6     | OS Setup            | Collect information about the operating system and its configuration    |
 
 ---
 # Summary

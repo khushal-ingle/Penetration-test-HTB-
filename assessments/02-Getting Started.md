@@ -13,7 +13,7 @@ openvp academy-regular.ovpn
 ## Service Scan using Nmap
 
 ```
-nmap -v -sT -sV -sC -A -O 10.129.130.170
+nmap -v -sV  10.129.130.170
 ```
 
 >Output

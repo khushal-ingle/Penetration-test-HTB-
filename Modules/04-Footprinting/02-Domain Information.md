@@ -1,4 +1,4 @@
-# Practical Step-by-Step Plan (Domain Information)
+# Domain Information
 
 ---
 

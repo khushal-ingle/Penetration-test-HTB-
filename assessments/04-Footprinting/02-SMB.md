@@ -1,4 +1,4 @@
-# FTP Enumration
+# SMB Enumration
 
 ## Spawn the target, gain a foothold and submit the contents of the user.txt flag.
 

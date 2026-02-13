@@ -14,13 +14,14 @@ The objective of this task is to enumerate the IPMI service running on the targe
 
 ---
 
-## Screenshot 1 — Identifying IPMI Service and Version
+## 1 — Identifying IPMI Service and Version
 
 ### Command Executed
 
 ```bash
 nmap -sU --script ipmi-version -p 623 10.129.4.118
 ```
+<img width="525" height="270" alt="image" src="https://github.com/user-attachments/assets/226da1f9-7878-4995-8b7d-b2a3c6af1ba5" />
 
 ---
 
@@ -56,8 +57,10 @@ The scan confirms that:
 * Multiple authentication mechanisms are enabled, making it a viable attack surface
 
 ---
+## Question
+>  What username is configured for accessing the host via IPMI?
 
-## Screenshot 2 — Dumping IPMI Hashes with Metasploit
+## 2 — Dumping IPMI Hashes with Metasploit
 
 ### Tool and Module Used
 
@@ -74,6 +77,7 @@ use auxiliary/scanner/ipmi/ipmi_dumphashes
 set rhost 10.129.4.118
 run
 ```
+<img width="1744" height="128" alt="image" src="https://github.com/user-attachments/assets/fac717ef-c668-4b85-b724-1d1495d2bd64" />
 
 ---
 
@@ -112,14 +116,17 @@ admin
 ```
 
 ---
+## Question
+>  What is the account's cleartext password?
 
-## Screenshot 3 — Cracking the IPMI Hash with Hashcat
+## 3 — Cracking the IPMI Hash with Hashcat
 
 ### Command Executed
 
 ```bash
 hashcat ipmihashe.txt -m 7300 -a 0 /usr/share/wordlists/rockyou.txt
 ```
+<img width="596" height="69" alt="image" src="https://github.com/user-attachments/assets/1a5da0fb-51bc-4c42-8c86-92bee9c53ce5" />
 
 ---
 
@@ -129,6 +136,8 @@ The extracted IPMI hash is cracked using Hashcat:
 
 * Hash mode `7300` corresponds to **IPMI2 RAKP HMAC-SHA1**
 * Wordlist attack using `rockyou.txt`
+  
+<img width="1424" height="481" alt="image" src="https://github.com/user-attachments/assets/90a6de3c-aa87-4433-b120-d686f987289c" />
 
 ---
 
@@ -160,7 +169,7 @@ trinity
 
 ---
 
-## Screenshot 4 — Hashcat Confirmation
+## 4 — Hashcat Confirmation
 
 ### What is happening in this screenshot
 

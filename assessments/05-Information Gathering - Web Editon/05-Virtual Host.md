@@ -1,5 +1,5 @@
 
-# Virtual Host (VHOST) Enumeration Walkthrough
+# Virtual Host (VHOST) Enumeration 
 
 ---
 

